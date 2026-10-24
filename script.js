@@ -112,7 +112,7 @@ function startTyping(){
     if(i >= text.length) return finish();
     const ch = text[i-1];
     if(i % 25 === 0 && cur.getBoundingClientRect().bottom > innerHeight*.8) cur.scrollIntoView({block:"center", behavior:"smooth"});
-    const delay = ch === "\n" ? 10000 : /[.!?♡]/.test(ch) ? 10000 : /[,;]/.test(ch) ? 10000 : 1000 + Math.random()*1000;
+    const delay = ch === "\n" ? 240 : /[.!?♡]/.test(ch) ? 280 : /[,;]/.test(ch) ? 140 : 22 + Math.random()*22;
     timer = setTimeout(tick, delay);
   }
   $("skip").onclick = finish;
@@ -121,12 +121,12 @@ function startTyping(){
     h++; hT.textContent = head.slice(0, h); hR.textContent = head.slice(h);
     if(h >= head.length){
       hC.classList.add("done"); hrts.classList.add("on");
-      timer = setTimeout(() => { if(typingDone) return; cur.classList.remove("done"); tick(); }, 4000);
+      timer = setTimeout(() => { if(typingDone) return; cur.classList.remove("done"); tick(); }, 1000);
       return;
     }
-    timer = setTimeout(typeHead, 4000 + Math.random()*4000);
+    timer = setTimeout(typeHead, 80 + Math.random()*50);
   }
-  if(reduce) finish(); else timer = setTimeout(typeHead, 5000);
+  if(reduce) finish(); else timer = setTimeout(typeHead, 600);
   addEventListener("pagehide", () => clearTimeout(timer));
 }
 

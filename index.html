@@ -1,66 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A Letter Just for You</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="flower" viewBox="0 0 100 100"><g fill="#e9a8b7"><ellipse cx="50" cy="26" rx="12" ry="21"/><ellipse cx="50" cy="26" rx="12" ry="21" transform="rotate(72 50 50)"/><ellipse cx="50" cy="26" rx="12" ry="21" transform="rotate(144 50 50)"/><ellipse cx="50" cy="26" rx="12" ry="21" transform="rotate(216 50 50)"/><ellipse cx="50" cy="26" rx="12" ry="21" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="9" fill="#ecc98e"/><circle cx="50" cy="50" r="4" fill="#d9a766"/></symbol>
-</defs></svg>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>A Letter Just for You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="flower" viewBox="0 0 100 100">
+          <g fill="#e9a8b7">
+            <ellipse cx="50" cy="26" rx="12" ry="21" />
+            <ellipse
+              cx="50"
+              cy="26"
+              rx="12"
+              ry="21"
+              transform="rotate(72 50 50)" />
+            <ellipse
+              cx="50"
+              cy="26"
+              rx="12"
+              ry="21"
+              transform="rotate(144 50 50)" />
+            <ellipse
+              cx="50"
+              cy="26"
+              rx="12"
+              ry="21"
+              transform="rotate(216 50 50)" />
+            <ellipse
+              cx="50"
+              cy="26"
+              rx="12"
+              ry="21"
+              transform="rotate(288 50 50)" />
+          </g>
+          <circle cx="50" cy="50" r="9" fill="#ecc98e" />
+          <circle cx="50" cy="50" r="4" fill="#d9a766" />
+        </symbol>
+      </defs>
+    </svg>
 
-<div class="glow"></div>
-<div class="decor" id="decor" aria-hidden="true"></div>
-<svg class="corner c1" aria-hidden="true"><use href="#flower"/></svg>
-<svg class="corner c2" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="glow"></div>
+    <div class="decor" id="decor" aria-hidden="true"></div>
+    <svg class="corner c1" aria-hidden="true"><use href="#flower" /></svg>
+    <svg class="corner c2" aria-hidden="true"><use href="#flower" /></svg>
 
-<main>
-<section class="stage" id="stage" aria-label="Opening">
-  <p class="for" id="for"></p>
-  <h1 class="title" data-k="openingTitle"></h1>
-  <div class="env-wrap" id="envWrap"><div class="env" aria-hidden="true">
-    <div class="back"></div><div class="mini">♡</div>
-    <div class="f l"></div><div class="f r"></div><div class="f b"></div>
-    <div class="flap"></div><div class="seal">♥</div>
-  </div></div>
-  <p class="sub" data-k="openingSubtitle"></p>
-  <button class="btn" id="openBtn" data-k="openLabel"></button>
-</section>
+    <main>
+      <section class="stage" id="stage" aria-label="Opening">
+        <p class="for" id="for"></p>
+        <h1 class="title" data-k="openingTitle"></h1>
+        <div class="env-wrap" id="envWrap">
+          <div class="env" aria-hidden="true">
+            <div class="back"></div>
+            <div class="mini">♡</div>
+            <div class="f l"></div>
+            <div class="f r"></div>
+            <div class="f b"></div>
+            <div class="flap"></div>
+            <div class="seal">♥</div>
+          </div>
+        </div>
+        <p class="sub" data-k="openingSubtitle"></p>
+        <button class="btn" id="openBtn" data-k="openLabel"></button>
+      </section>
 
-<section class="read" id="read" aria-label="Your letter">
-  <article class="paper">
-    <svg class="fl a" aria-hidden="true"><use href="#flower"/></svg>
-    <svg class="fl c" aria-hidden="true"><use href="#flower"/></svg>
-    <svg class="fl b" aria-hidden="true"><use href="#flower"/></svg>
-    <button class="skip" id="skip">Skip animation</button>
-    <h2 class="heading" id="heading" tabindex="-1"><span id="hTyped"></span><span class="cursor" id="hCursor"></span><span class="rest" id="hRest" aria-hidden="true"></span></h2>
-    <p class="heart-div"><button class="hrt" aria-label="Send a little love">♡</button><button class="hrt mid" aria-label="Send a little love">♥</button><button class="hrt" aria-label="Send a little love">♡</button></p>
-    <div class="vh" id="full"></div>
-    <div class="text" aria-hidden="true"><span id="typed"></span><span class="cursor" id="cursor"></span><span class="rest" id="rest"></span></div>
-    <div class="closing" id="closing">
-      <p class="sub" data-k="closingTitle"></p>
-      <button class="btn" id="wishBtn" data-k="wishLabel"></button>
-      <div class="final" id="final" aria-live="polite">
-        <p data-k="closingMessage"></p>
-        <p class="made" data-k="openingSubtitle"></p>
-        <p class="from" data-k="senderName"></p>
-      </div>
+      <section class="read" id="read" aria-label="Your letter">
+        <article class="paper">
+          <svg class="fl a" aria-hidden="true"><use href="#flower" /></svg>
+          <svg class="fl c" aria-hidden="true"><use href="#flower" /></svg>
+          <svg class="fl b" aria-hidden="true"><use href="#flower" /></svg>
+          <button class="skip" id="skip">Skip animation</button>
+          <h2 class="heading" id="heading" tabindex="-1">
+            <span id="hTyped"></span><span class="cursor" id="hCursor"></span
+            ><span class="rest" id="hRest" aria-hidden="true"></span>
+          </h2>
+          <p class="heart-div">
+            <button class="hrt" aria-label="Send a little love">♡</button
+            ><button class="hrt mid" aria-label="Send a little love">♥</button
+            ><button class="hrt" aria-label="Send a little love">♡</button>
+          </p>
+          <div class="vh" id="full"></div>
+          <div class="text" aria-hidden="true">
+            <span id="typed"></span><span class="cursor" id="cursor"></span
+            ><span class="rest" id="rest"></span>
+          </div>
+          <div class="closing" id="closing">
+            <p class="sub" data-k="closingTitle"></p>
+            <button class="btn" id="wishBtn" data-k="wishLabel"></button>
+            <div class="final" id="final" aria-live="polite">
+              <p data-k="closingMessage"></p>
+              <p class="made" data-k="openingSubtitle"></p>
+              <p class="from" data-k="senderName"></p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="player" id="player">
+      <button
+        class="rec"
+        id="playBtn"
+        aria-label="Play music"
+        aria-pressed="false">
+        <span class="ic" id="ic">▶</span>
+      </button>
+      <span class="song"
+        ><span aria-hidden="true">♪ </span><span data-k="songTitle"></span
+      ></span>
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
     </div>
-  </article>
-</section>
-</main>
+    <div class="toast" id="toast" role="status"></div>
 
-<div class="player" id="player">
-  <button class="rec" id="playBtn" aria-label="Play music" aria-pressed="false"><span class="ic" id="ic">▶</span></button>
-  <span class="song"><span aria-hidden="true">♪ </span><span data-k="songTitle"></span></span>
-  <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
-</div>
-<div class="toast" id="toast" role="status"></div>
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
